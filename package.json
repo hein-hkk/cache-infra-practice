@@ -1,0 +1,34 @@
+{
+  "name": "quotekai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev":               "concurrently \"pnpm dev:api\" \"pnpm dev:worker\" \"pnpm dev:web\"",
+    "dev:api":           "pnpm --filter @quotekai/api dev",
+    "dev:worker":        "pnpm --filter @quotekai/worker dev",
+    "dev:web":           "pnpm --filter @quotekai/web dev",
+    "dev:mobile":        "pnpm --filter @quotekai/mobile dev",
+    "build":             "pnpm -r build",
+    "typecheck":         "pnpm -r typecheck",
+    "lint":              "pnpm -r lint",
+    "db:migrate:dev":    "pnpm --filter @quotekai/api db:migrate:dev",
+    "db:migrate:deploy": "pnpm --filter @quotekai/api db:migrate:deploy",
+    "db:studio":         "pnpm --filter @quotekai/api db:studio",
+    "db:seed":           "pnpm --filter @quotekai/api db:seed",
+    "db:reset":          "pnpm --filter @quotekai/api db:reset"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "typescript": "^5.5.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "msgpackr-extract",
+      "prisma",
+      "sharp"
+    ]
+  }
+}
