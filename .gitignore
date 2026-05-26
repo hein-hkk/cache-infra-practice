@@ -1,0 +1,15 @@
+node_modules
+.next
+dist
+.turbo
+.pnpm-store
+.env
+.env.*
+!.env.example
+.env.local
+coverage
+*.log
+*.tsbuildinfo
+.DS_Store
+.eslintcache
+apps/api/src/generated
