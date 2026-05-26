@@ -13,6 +13,7 @@ export const HighlightSchema = z.object({
   id: z.string().uuid(),
   text: z.string(),
   author: z.string(),
+  createdAt: z.string().datetime(),
   setAt: z.string().datetime(),
 });
 

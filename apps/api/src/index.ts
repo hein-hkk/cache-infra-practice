@@ -1,13 +1,8 @@
 import cors from 'cors';
 import express from 'express';
-import pino from 'pino';
 import { config } from './config';
+import { log } from './lib/logger';
 import { quotesRouter } from './routes/quotes';
-
-const log = pino({
-  level: config.logLevel,
-  transport: config.nodeEnv === 'development' ? { target: 'pino-pretty' } : undefined,
-});
 
 const app = express();
 
