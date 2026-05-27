@@ -1,12 +1,7 @@
 import { Queue, Worker } from 'bullmq';
-import pino from 'pino';
 import { config } from './config';
+import { log } from './lib/logger';
 import { rotateHighlight } from './jobs/rotate-highlight';
-
-const log = pino({
-  level: config.logLevel,
-  transport: config.nodeEnv === 'development' ? { target: 'pino-pretty' } : undefined,
-});
 
 // Parse REDIS_URL into host/port options so BullMQ creates its own connection
 // (avoids ioredis version mismatch between worker and bullmq).
