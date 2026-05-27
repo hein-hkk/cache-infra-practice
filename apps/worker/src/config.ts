@@ -8,6 +8,7 @@ const env = z.object({
   LOG_LEVEL:            z.enum(['debug', 'info', 'warn', 'error']).default('info'),
   CLOUDFLARE_ZONE_ID:   z.string().default(''),
   CLOUDFLARE_API_TOKEN: z.string().default(''),
+  API_BASE_URL:         z.string().default(''),
 }).parse(process.env);
 
 export const config = {
@@ -15,6 +16,7 @@ export const config = {
   databaseUrl: env.DATABASE_URL,
   redisUrl:   env.REDIS_URL,
   logLevel:   env.LOG_LEVEL,
+  apiBaseUrl: env.API_BASE_URL,
   cloudflare: {
     zoneId:   env.CLOUDFLARE_ZONE_ID,
     apiToken: env.CLOUDFLARE_API_TOKEN,
