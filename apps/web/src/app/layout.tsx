@@ -6,7 +6,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <nav>
+          <a href="/">All Quotes</a>
+          {' · '}
+          <a href="/highlight">Highlight</a>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
